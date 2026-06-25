@@ -1,13 +1,114 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+  font-family: 'Inter', system-ui, sans-serif;
+
+  --cinema-bg: #080b14;
+  --cinema-card: #121826;
+  --cinema-red: #e50914;
+  --cinema-gold: #f5b301;
+  --cinema-blue: #3b82f6;
+  --cinema-text: #f8fafc;
+  --cinema-muted: #94a3b8;
+
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background-image: radial-gradient(circle at 10% 8%, rgba(229,9,20,0.18), transparent 18%), radial-gradient(circle at 90% 12%, rgba(59,130,246,0.12), transparent 20%), linear-gradient(180deg, #0f0f1a 0%, #151515 100%);
+  color: #f8fafc;
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+::selection {
+  background: rgba(229, 9, 20, 0.35);
+  color: #fff;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button {
+  transition: transform 0.18s ease, box-shadow 0.18s ease, background-color 0.18s ease;
+}
+
+button:hover {
+  transform: translateY(-1px);
+}
+
+.glass-card {
+  @apply bg-white/5 border border-white/10 backdrop-blur-xl shadow-soft rounded-[24px];
+}
+
+.glass-panel {
+  @apply bg-slate-900/80 border border-white/10 backdrop-blur-xl shadow-soft rounded-[24px];
+}
+
+.hero-panel {
+  @apply rounded-[28px] overflow-hidden border border-white/10 shadow-glow;
+}
+
+.glass-button {
+  @apply inline-flex items-center justify-center rounded-full px-5 py-3 text-sm font-semibold tracking-wide transition duration-300 ease-in-out;
+}
+
+.glass-button-primary {
+  @apply glass-button bg-cinemaRed text-white shadow-[0_20px_40px_rgba(229,9,20,0.22)];
+}
+
+.glass-button-secondary {
+  @apply glass-button bg-white/10 text-white border border-white/10;
+}
+
+.section-title {
+  @apply text-white font-semibold tracking-tight;
+}
+
+.badge-status {
+  @apply inline-flex items-center rounded-full px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-white/90;
+}
+
+.toast-card {
+  @apply fixed bottom-6 right-6 z-50 max-w-sm rounded-3xl border border-white/10 bg-slate-950/95 p-4 shadow-soft backdrop-blur-xl text-sm text-slate-100;
+}
+
+@media (max-width: 768px) {
+  .page-fade {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+.movie-card {
+  transition: all 0.35s ease;
+}
+
+.movie-card:hover {
+  transform: translateY(-10px);
+  box-shadow:
+    0 25px 50px rgba(229,9,20,.15);
+}
+
+.movie-poster {
+  transition: transform .4s ease;
+}
+
+.movie-card:hover .movie-poster {
+  transform: scale(1.05);
 }
