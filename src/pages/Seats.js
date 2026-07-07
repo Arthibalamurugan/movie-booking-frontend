@@ -1,4 +1,4 @@
-﻿import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import API from '../api/axios';
 
@@ -12,7 +12,7 @@ const Seats = () => {
     const [showInfo, setShowInfo] = useState(null);
     const navigate = useNavigate();
 
-    const loadSeats = async () => {
+    const loadSeats = useCallback(async () => {
         try {
             const res = await API.get(`/shows/${showId}/seats`);
             setSeats(res.data.data || []);
@@ -23,11 +23,11 @@ const Seats = () => {
         } finally {
             setLoading(false);
         }
-    };
+    }, [showId]);
 
     useEffect(() => {
         loadSeats();
-    }, [showId]);
+    }, [loadSeats]);
 
     const handleBook = async () => {
         if (!selected) return;
@@ -201,3 +201,4 @@ const Seats = () => {
 };
 
 export default Seats;
+

@@ -1,4 +1,4 @@
-﻿import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import API from '../api/axios';
 
 const ManageShows = () => {
@@ -99,4 +99,4 @@ const ManageShows = () => {
     );
 };
 
-export default ManageShows;
+export default ManageShows;

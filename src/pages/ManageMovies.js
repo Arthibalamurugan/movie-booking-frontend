@@ -1,4 +1,4 @@
-﻿import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import API from '../api/axios';
 
@@ -125,4 +125,4 @@ const ManageMovies = () => {
     );
 };
 
-export default ManageMovies;
+export default ManageMovies;

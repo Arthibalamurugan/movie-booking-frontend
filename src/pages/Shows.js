@@ -1,4 +1,4 @@
-﻿import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import API from '../api/axios';
 
@@ -12,7 +12,7 @@ const Shows = () => {
     const [selectedDate, setSelectedDate] = useState('');
     const navigate = useNavigate();
 
-    const fetchShows = async () => {
+    const fetchShows = useCallback(async () => {
         setLoading(true);
         try {
             const response = await API.get(`/shows/movie/${movieId}`);
@@ -23,11 +23,11 @@ const Shows = () => {
         } finally {
             setLoading(false);
         }
-    };
+    }, [movieId]);
 
     useEffect(() => {
         fetchShows();
-    }, [movieId]);
+    }, [fetchShows]);
 
     const filteredShows = shows.filter((show) => {
         const matchesSearch = search
@@ -231,3 +231,4 @@ const Shows = () => {
 };
 
 export default Shows;
+

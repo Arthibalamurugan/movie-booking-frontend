@@ -1,4 +1,4 @@
-﻿import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import API from '../api/axios';
 
@@ -145,4 +145,4 @@ const EditMovie = () => {
     );
 };
 
-export default EditMovie;
+export default EditMovie;

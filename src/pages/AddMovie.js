@@ -1,4 +1,4 @@
-﻿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import API from '../api/axios';
 
@@ -141,4 +141,4 @@ const AddMovie = () => {
     );
 };
 
-export default AddMovie;
+export default AddMovie;

@@ -1,4 +1,4 @@
-﻿import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import API from '../api/axios';
 
 const ManageUsers = () => {
@@ -101,4 +101,4 @@ const ManageUsers = () => {
     );
 };
 
-export default ManageUsers;
+export default ManageUsers;
