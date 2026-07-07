@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const API = axios.create({
-    baseURL: 'https://movie-booking-system-production.up.railway.app/api',
+    baseURL: "https://powerful-healing-production.up.railway.app/api",
 });
 
 API.interceptors.request.use((config) => {
