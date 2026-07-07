@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const API = axios.create({
-    baseURL: 'http://localhost:8080/api',
+    baseURL: 'https://movie-booking-system-production.up.railway.app/api',
 });
 
 API.interceptors.request.use((config) => {
